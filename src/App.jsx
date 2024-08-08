@@ -1,31 +1,31 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-const notesSample = [
-  {
-    text: "today was a good daya;dfj a;fj",
-    color: "#3f35fe",
-    id: 1,
-    rotate: "10deg",
-  },
-  {
-    text: "today was a good daya;dfj a;fj",
-    color: "#ff31fe",
-    id: 2,
-    rotate: "-10deg",
-  },
-  {
-    text: "today was a good daa;dfj a;fjy",
-    color: "#3f65fe",
-    id: 3,
-    rotate: "-10deg",
-  },
-  {
-    text: "today was a good da;dfj a;fjay",
-    color: "#3f88fe",
-    id: 4,
-    rotate: "10deg",
-  },
-];
+// const notesSample = [
+//   {
+//     text: "today was a good daya;dfj a;fj",
+//     color: "#3f35fe",
+//     id: 1,
+//     rotate: "10deg",
+//   },
+//   {
+//     text: "today was a good daya;dfj a;fj",
+//     color: "#ff31fe",
+//     id: 2,
+//     rotate: "-10deg",
+//   },
+//   {
+//     text: "today was a good daa;dfj a;fjy",
+//     color: "#3f65fe",
+//     id: 3,
+//     rotate: "-10deg",
+//   },
+//   {
+//     text: "today was a good da;dfj a;fjay",
+//     color: "#3f88fe",
+//     id: 4,
+//     rotate: "10deg",
+//   },
+// ];
 
 const NoteContext = createContext();
 

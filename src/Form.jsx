@@ -1,7 +1,9 @@
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { NoteContext } from "./App";
 
 export function Form() {
+  const inputRef = useRef(null);
+
   const {
     showNoteCreater,
     setShowNoteCreater,
@@ -24,6 +26,17 @@ export function Form() {
     setNote("");
   }
 
+  useEffect(
+    function () {
+      localStorage.setItem("notes", JSON.stringify(notes));
+    },
+    [notes]
+  );
+
+  useEffect(function (){
+    inputRef.current.focus();
+  }, [])
+
   if (!showNoteCreater) return null;
   return (
     <main>
@@ -38,6 +51,7 @@ export function Form() {
           value={note}
           onChange={(e) => setNote(e.target.value)}
           placeholder="type something..."
+          ref={inputRef}
         />
       </div>
     </main>

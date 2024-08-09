@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext,  useState } from "react";
 import { Header } from "./Header";
 import { Main } from "./MainPage";
 
@@ -13,12 +13,7 @@ export default function App() {
   });
   const [note, setNote] = useState("");
 
-  useEffect(
-    function () {
-      localStorage.setItem("notes", JSON.stringify(notes));
-    },
-    [notes]
-  );
+  
 
   return (
     <NoteContext.Provider

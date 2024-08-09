@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { NoteContext, getRandomHexColor, getRandomRotation } from "./App";
+import { NoteContext } from "./App";
 
 export function Form() {
   const {
@@ -42,4 +42,15 @@ export function Form() {
       </div>
     </main>
   );
+}
+
+
+function getRandomHexColor() {
+  const hexCode = Math.floor(Math.random() * 16777215).toString(16);
+  return `#${hexCode.padStart(6, "0")}`;
+}
+
+function getRandomRotation() {
+  const rotation = Math.floor(Math.random() * 21) - 10;
+  return `${rotation}deg`;
 }

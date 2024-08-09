@@ -7,7 +7,7 @@ export function Main() {
   const { notes, showNoteCreater } = useContext(NoteContext);
   if (showNoteCreater) return <Form />;
 
-  if (notes.length < 1)
+  if (!notes)
     return (
       <main
         style={{

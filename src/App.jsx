@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { Header } from "./Header";
-import { Main } from "./Main.1";
+import { Main } from "./MainPage";
 
 
 export const NoteContext = createContext();
@@ -46,12 +46,3 @@ function Footer() {
   );
 }
 
-export function getRandomHexColor() {
-  const hexCode = Math.floor(Math.random() * 16777215).toString(16);
-  return `#${hexCode.padStart(6, "0")}`;
-}
-
-export function getRandomRotation() {
-  const rotation = Math.floor(Math.random() * 21) - 10;
-  return `${rotation}deg`;
-}

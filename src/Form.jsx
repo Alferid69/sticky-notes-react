@@ -13,6 +13,8 @@ export function Form() {
     setNote,
   } = useContext(NoteContext);
 
+  if (notes === null) setNotes([]);
+
   function handleAddNote() {
     if (note.length === 0) return;
     const newNote = {
@@ -21,7 +23,6 @@ export function Form() {
       id: crypto.randomUUID(),
       rotate: getRandomRotation(),
     };
-    if(notes === null) setNotes([]);
     setNotes([...notes, newNote]);
     setShowNoteCreater(false);
     setNote("");

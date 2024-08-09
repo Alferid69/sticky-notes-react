@@ -21,6 +21,7 @@ export function Form() {
       id: crypto.randomUUID(),
       rotate: getRandomRotation(),
     };
+    if(notes === null) setNotes([]);
     setNotes([...notes, newNote]);
     setShowNoteCreater(false);
     setNote("");

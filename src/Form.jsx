@@ -14,7 +14,7 @@ export function Form() {
   } = useContext(NoteContext);
 
   function handleAddNote() {
-    if (!note) return;
+    if (note.length === 0) return;
     const newNote = {
       text: note,
       color: getRandomHexColor(),
@@ -26,16 +26,9 @@ export function Form() {
     setNote("");
   }
 
-  useEffect(
-    function () {
-      localStorage.setItem("notes", JSON.stringify(notes));
-    },
-    [notes]
-  );
-
-  useEffect(function (){
+  useEffect(function () {
     inputRef.current.focus();
-  }, [])
+  }, []);
 
   if (!showNoteCreater) return null;
   return (
@@ -57,7 +50,6 @@ export function Form() {
     </main>
   );
 }
-
 
 function getRandomHexColor() {
   const hexCode = Math.floor(Math.random() * 16777215).toString(16);
